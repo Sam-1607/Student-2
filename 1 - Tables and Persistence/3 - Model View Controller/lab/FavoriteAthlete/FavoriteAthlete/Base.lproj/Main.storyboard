@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Jdx-qb-Jda" kind="show" identifier="EditAthlete" id="lBM-ky-b8A"/>
+                                    <segue destination="Jdx-qb-Jda" kind="show" identifier="EditAthlete" destinationCreationSelector="editAthlete:sender:" id="lBM-ky-b8A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="My Favorite Athletes" id="HkE-HG-Ylf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sEp-s4-2KD">
                             <connections>
-                                <segue destination="Jdx-qb-Jda" kind="show" identifier="AddAthlete" id="wJO-3P-Bh6"/>
+                                <segue destination="Jdx-qb-Jda" kind="show" identifier="AddAthlete" destinationCreationSelector="addAthlete:" id="wJO-3P-Bh6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -108,7 +108,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Leage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qwm-lN-Kse">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="League" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qwm-lN-Kse">
                                         <rect key="frame" x="0.0" y="88" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -123,6 +123,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8l-hP-2us">
                                 <rect key="frame" x="190" y="385" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Jdx-qb-Jda" eventType="touchUpInside" id="odY-or-hab"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1la-jA-Pb4"/>
@@ -140,12 +143,14 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="vBG-05-QLL"/>
                     <connections>
                         <outlet property="ageTextField" destination="5BH-RZ-lV3" id="1R7-Jn-nje"/>
-                        <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="gYY-f1-HQF"/>
+                        <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="7ik-an-Aqe"/>
                         <outlet property="nameTextField" destination="9Ms-Uu-Heg" id="VJo-C5-mAK"/>
-                        <outlet property="teamTextField" destination="uqw-ia-7EH" id="06a-T2-sLw"/>
+                        <outlet property="teamTextField" destination="uqw-ia-7EH" id="GVZ-B1-HRp"/>
+                        <segue destination="kq0-GT-WjS" kind="unwind" identifier="myIdentifier" unwindAction="myUnwindSegueWithParamater:" id="oai-Pe-7VN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRJ-p2-DTp" sceneMemberID="firstResponder"/>
+                <exit id="kq0-GT-WjS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1860" y="139"/>
         </scene>

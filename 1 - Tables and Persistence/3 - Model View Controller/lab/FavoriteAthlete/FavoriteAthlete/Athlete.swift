@@ -13,6 +13,6 @@ struct Athlete {
     var team: String
     
     var description: String {
-        return "\(name) is \(age) years old a;nd plays for the \(team) in the \(league)"
+        return "\(name) is \(age) years old and plays for the \(team) in the \(league)"
     }
 }

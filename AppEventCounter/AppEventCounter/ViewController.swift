@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         sceneDidBecomeActiveLabel.text = "The App scene has Become active \(sceneDidBecomeActiveCount) time(s)"
         sceneWillResignActiveLabel.text = "The App scene has Resigned Active \(sceneWillResignActiveCount) time(s)"
         sceneWillEnterForeGroundLabel.text = "The Scene has entered the ForeGround \(sceneWillEnterForeGroundCount) times(s)"
-        sceneDidEnterBackgroundLabel.text = "The scene has entered the Background \(sceneDidEnterBackground) time(s)"
+        sceneDidEnterBackgroundLabel.text = "The Scene has finally entered the background \(sceneDidEnterBackground) time(s)"
         
     }
     

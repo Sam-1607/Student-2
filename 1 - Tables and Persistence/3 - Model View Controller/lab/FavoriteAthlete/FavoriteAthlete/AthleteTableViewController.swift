@@ -2,6 +2,61 @@ import UIKit
 
 class AthleteTableViewController: UITableViewController {
     
+    
+    @IBSegueAction func addAthlete(_ coder: NSCoder) -> AthleteFormViewController? {
+        return AthleteFormViewController(coder: coder, athlete: nil)
+    }
+    
+    
+    
+    
+    
+    @IBAction func myUnwindSegue(paramater: UIStoryboardSegue) {
+        guard let athleteFormViewController =
+                paramater.source as? AthleteFormViewController,
+            let athlete = athleteFormViewController.athlete
+        else { return }
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            athletes[selectedIndexPath.row] = athlete
+        } else {
+            athletes.append(athlete)
+        }
+        
+    }
+
+
+    
+    
+    @IBSegueAction func editAthlete(_ coder: NSCoder, sender: Any?) -> AthleteFormViewController? {
+        
+        let athleteToEdit: Athlete?
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            athleteToEdit = athletes[indexPath.row]
+        } else {
+            athleteToEdit = nil
+        }
+        return AthleteFormViewController(coder: coder, athlete:
+           athleteToEdit)
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     struct PropertyKeys {
         static let athleteCell = "AthleteCell"
     }
