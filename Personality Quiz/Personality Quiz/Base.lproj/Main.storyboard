@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Personality_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kyh-Y1-o34">
-                                <rect key="frame" x="8" y="389" width="414" height="166"/>
+                                <rect key="frame" x="8" y="389" width="428" height="165.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-xV-A9r">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="92.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Which Avatar Character are you ?">
                                                 <attributes>
@@ -33,7 +33,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyB-Ye-fPi">
-                                        <rect key="frame" x="0.0" y="101" width="414" height="65"/>
+                                        <rect key="frame" x="0.0" y="100.66666666666669" width="428" height="64.666666666666686"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
@@ -47,13 +47,51 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aang" translatesAutoresizingMaskIntoConstraints="NO" id="PAs-Gg-IMu">
+                                <rect key="frame" x="20" y="44" width="133" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="IlO-7r-oGS"/>
+                                    <constraint firstAttribute="height" constant="71" id="kW5-WQ-kb1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="katara" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-1h-ANi">
+                                <rect key="frame" x="278" y="44" width="116" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="iOi-KJ-jq9"/>
+                                    <constraint firstAttribute="height" constant="89" id="mVD-IJ-6jz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sokka" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-ya-bMQ">
+                                <rect key="frame" x="20" y="758" width="117" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="3ri-9l-nWK"/>
+                                    <constraint firstAttribute="height" constant="104" id="OYZ-CC-Irp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toph" translatesAutoresizingMaskIntoConstraints="NO" id="1j1-No-fso">
+                                <rect key="frame" x="272" y="757" width="122" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="8D3-zE-2s4"/>
+                                    <constraint firstAttribute="width" constant="122" id="WQ6-w8-DZa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.43247047607182559" green="0.89000000000000001" blue="0.78409193580755654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89000000000000001" green="0.88192165254582466" blue="0.6488400769314594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HFZ-1h-ANi" secondAttribute="trailing" constant="34" id="CSI-cO-soS"/>
+                            <constraint firstItem="HFZ-1h-ANi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LKD-Tn-CaF"/>
+                            <constraint firstItem="PAs-Gg-IMu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lgw-Mb-A8l"/>
                             <constraint firstAttribute="trailing" secondItem="Kyh-Y1-o34" secondAttribute="trailing" constant="-8" id="SEx-5b-Olv"/>
+                            <constraint firstItem="HFZ-1h-ANi" firstAttribute="leading" secondItem="PAs-Gg-IMu" secondAttribute="trailing" constant="125" id="WSw-Tg-kzo"/>
                             <constraint firstItem="Kyh-Y1-o34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Wwm-Yz-jfd"/>
+                            <constraint firstItem="x5W-ya-bMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YD3-Ie-ehi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="x5W-ya-bMQ" secondAttribute="bottom" constant="30" id="dSN-as-VZr"/>
                             <constraint firstItem="Kyh-Y1-o34" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="345" id="gFj-WT-52t"/>
+                            <constraint firstItem="1j1-No-fso" firstAttribute="leading" secondItem="x5W-ya-bMQ" secondAttribute="trailing" constant="135" id="m0w-BL-STI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1j1-No-fso" secondAttribute="trailing" constant="34" id="mjZ-Bc-kFq"/>
+                            <constraint firstItem="PAs-Gg-IMu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nio-PT-B88"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1j1-No-fso" secondAttribute="bottom" constant="30" id="tVj-35-hUm"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -66,7 +104,7 @@
             <objects>
                 <viewController id="mid-X0-ymy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wsz-7X-oEM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MQk-tA-zC8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,7 +119,7 @@
             <objects>
                 <viewController id="Rtz-vL-GHG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h01-c9-vez">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TXJ-UO-gxF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,6 +131,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Aang" width="1000" height="562"/>
+        <image name="katara" width="1434" height="1080"/>
+        <image name="sokka" width="1000" height="752"/>
+        <image name="toph" width="333" height="250"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

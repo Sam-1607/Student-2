@@ -41,22 +41,6 @@ class AthleteTableViewController: UITableViewController {
 }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
     struct PropertyKeys {
         static let athleteCell = "AthleteCell"
     }
