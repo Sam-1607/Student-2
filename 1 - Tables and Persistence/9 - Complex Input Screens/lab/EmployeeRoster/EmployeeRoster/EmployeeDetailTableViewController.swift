@@ -11,10 +11,20 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet var dobLabel: UILabel!
     @IBOutlet var employeeTypeLabel: UILabel!
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var dobDatePicker: UIDatePicker!
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?
     
+    var isEditingBirthday: Bool = false {
+        didSet {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = 
+    }
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
