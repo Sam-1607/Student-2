@@ -12,6 +12,9 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBOutlet var employeeTypeLabel: UILabel!
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var dobDatePicker: UIDatePicker!
+    @IBAction func eventChanged(_ sender: Any) {
+        dobLabel.text = dateFormatter.string(from: dobDatePicker.date)
+    }
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?
@@ -23,8 +26,23 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = 
+        if indexPath.row == 2 && isEditingBirthday {
+            return 0
+        }
+
+
+        return UITableView.automaticDimension
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 1 {
+            isEditingBirthday.toggle()
+            dobLabel.textColor = .black
+            dobLabel.text = dateFormatter.string(from: dobDatePicker.date )
+        }
+    }
+    
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -63,7 +81,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
             return
         }
         
-        let employee = Employee(name: name, dateOfBirth: Date(), employeeType: .exempt)
+        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
         delegate?.employeeDetailTableViewController(self, didSave: employee)
     }
     
@@ -74,5 +92,12 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     @IBAction func nameTextFieldDidChange(_ sender: UITextField) {
         updateSaveButtonState()
     }
+    
+    @IBSegueAction func showEmployeeType(_ coder: NSCoder) -> EmployeeTypeTableViewController? {
+        
+        return EmployeeTypeTableViewController(coder: coder)
+    }
+    
+    
 
 }
