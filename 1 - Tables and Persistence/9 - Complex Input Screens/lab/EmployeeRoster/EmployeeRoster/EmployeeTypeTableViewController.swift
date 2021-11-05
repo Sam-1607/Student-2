@@ -56,12 +56,14 @@ class EmployeeTypeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         employeeType = EmployeeType.allCases[indexPath.row]
+        
         guard let employeeType = employeeType else {
             return
         }
         delegate?.employeeTypeTableViewController(self, didselect: employeeType)
     
         tableView.reloadData()
+        
         
     }
    
