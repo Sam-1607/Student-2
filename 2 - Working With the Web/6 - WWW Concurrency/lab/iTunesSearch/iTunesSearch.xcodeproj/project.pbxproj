@@ -14,6 +14,8 @@
 		18A6052923CF9803002037CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A6052723CF9803002037CA /* LaunchScreen.storyboard */; };
 		18A6053123CF9829002037CA /* StoreItemListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6053023CF9829002037CA /* StoreItemListTableViewController.swift */; };
 		18A6053323CF9ADA002037CA /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6053223CF9ADA002037CA /* ItemCell.swift */; };
+		7D61F7F627456AC30016D8C1 /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61F7F527456AC30016D8C1 /* StoreItems.swift */; };
+		7D61F7F827456C2A0016D8C1 /* StoreItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D61F7F727456C2A0016D8C1 /* StoreItemsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		18A6052A23CF9803002037CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A6053023CF9829002037CA /* StoreItemListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemListTableViewController.swift; sourceTree = "<group>"; };
 		18A6053223CF9ADA002037CA /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		7D61F7F527456AC30016D8C1 /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
+		7D61F7F727456C2A0016D8C1 /* StoreItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,7 @@
 		18A6051023CF9802002037CA = {
 			isa = PBXGroup;
 			children = (
+				7D61F7F727456C2A0016D8C1 /* StoreItemsController.swift */,
 				18A6051B23CF9802002037CA /* iTunesSearch */,
 				18A6051A23CF9802002037CA /* Products */,
 			);
@@ -66,6 +71,7 @@
 				18A6052523CF9803002037CA /* Assets.xcassets */,
 				18A6052723CF9803002037CA /* LaunchScreen.storyboard */,
 				18A6052223CF9802002037CA /* Main.storyboard */,
+				7D61F7F527456AC30016D8C1 /* StoreItems.swift */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -141,8 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A6053323CF9ADA002037CA /* ItemCell.swift in Sources */,
+				7D61F7F627456AC30016D8C1 /* StoreItems.swift in Sources */,
 				18A6053123CF9829002037CA /* StoreItemListTableViewController.swift in Sources */,
 				18A6051D23CF9802002037CA /* AppDelegate.swift in Sources */,
+				7D61F7F827456C2A0016D8C1 /* StoreItemsController.swift in Sources */,
 				18A6051F23CF9802002037CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

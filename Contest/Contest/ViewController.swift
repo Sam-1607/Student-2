@@ -16,15 +16,14 @@ class ViewController: UIViewController {
     
     @IBAction func submitButton(_ sender: UIButton) {
         if emailTextField.text == "" {
-            UIView.animate(withDuration: 5, delay: 0,usingSpringWithDamping: 0.1, initialSpringVelocity: 100000, animations: {
+            UIView.animate(withDuration: 5, delay: 0,usingSpringWithDamping: 0.1, initialSpringVelocity: 1000000, animations: {
                 self.emailTextField.transform = CGAffineTransform(translationX: 5, y: 0)
                 
             }) {(_) in
                 self.emailTextField.transform = CGAffineTransform.identity
             }
         } else {
-            
-        }
+            performSegue(withIdentifier: "myShowSegue", sender: UIButton())        }
 
     }
     
