@@ -10,7 +10,7 @@ struct StoreItem: Codable {
     var artistName: String
     var trackName: String
     var kind: String
-    var artWorkURL: String
+    var artWorkURL: URL
     var longDescription: String?
     var description: String
     
@@ -29,7 +29,7 @@ struct StoreItem: Codable {
         trackName = try values.decode(String.self, forKey: CodingKeys.trackName)
         artistName = try values.decode(String.self, forKey: CodingKeys.artistName)
         kind = try values.decode(String.self, forKey: CodingKeys.kind)
-        artWorkURL = try values.decode(String.self, forKey: CodingKeys.artWorkURL)
+        artWorkURL = try values.decode(URL.self, forKey: CodingKeys.artWorkURL)
         if let description = try? values.decode(String.self, forKey: CodingKeys.description) {
             self.description = description
         } else {

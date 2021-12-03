@@ -46,7 +46,6 @@
 		18A6051023CF9802002037CA = {
 			isa = PBXGroup;
 			children = (
-				7D61F7F727456C2A0016D8C1 /* StoreItemsController.swift */,
 				18A6051B23CF9802002037CA /* iTunesSearch */,
 				18A6051A23CF9802002037CA /* Products */,
 			);
@@ -64,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				18A6052A23CF9803002037CA /* Info.plist */,
+				7D61F7F727456C2A0016D8C1 /* StoreItemsController.swift */,
 				18A6051C23CF9802002037CA /* AppDelegate.swift */,
 				18A6053223CF9ADA002037CA /* ItemCell.swift */,
 				18A6051E23CF9802002037CA /* SceneDelegate.swift */,

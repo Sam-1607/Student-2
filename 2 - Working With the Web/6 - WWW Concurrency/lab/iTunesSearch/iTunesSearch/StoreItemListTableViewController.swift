@@ -8,9 +8,11 @@ class StoreItemListTableViewController: UITableViewController {
     
     // add item controller property
     
-    var items = [String]()
-    
+    var items = [StoreItem]()
+    let networkController = StoreItemController()
     let queryOptions = ["movie", "music", "software", "ebook"]
+    
+   // var storeItem = StoreItemsController 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,28 @@ class StoreItemListTableViewController: UITableViewController {
         let mediaType = queryOptions[filterSegmentedControl.selectedSegmentIndex]
         
         if !searchTerm.isEmpty {
+            let query = [
+                "term": searchTerm,
+                "media": mediaType,
+                "lang": "en_us",
+                
+                "limit": "10"
+            ]
             
-            // set up query dictionary
-            
+            // set up query dictionarys
+            networkController.fetchItems(matching: query) { result in
+                //what the function does
+                switch result {
+                case .success(let items):
+                    DispatchQueue.main.async {
+                        self.items = items
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
             // use the item controller to fetch items
             // if successful, use the main queue to set self.items and reload the table view
             // otherwise, print an error to the console
@@ -38,6 +59,20 @@ class StoreItemListTableViewController: UITableViewController {
     func configure(cell: ItemCell, forItemAt indexPath: IndexPath) {
         
         let item = items[indexPath.row]
+        cell.titleLabel.text = item.trackName
+        cell.detailLabel.text = item.artistName
+        cell.itemImageView.image = UIImage(systemName: "photo")
+        
+        networkController.fetchImage(from: item.artWorkURL) { (result) in
+            switch result {
+            case.success(let image):
+                DispatchQueue.main.async {
+                    cell.itemImageView.image = image
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         // set cell.titleLabel to the item's name
         
