@@ -14,7 +14,7 @@ struct ToDo {
     var notes: String?
     
     static func ==(lhs: ToDo, rhs: ToDo) -> Bool {
-        return lhs == rhs
+        return lhs.id == rhs.id
     }
     
     static func loadToDos() -> [ToDo]? {

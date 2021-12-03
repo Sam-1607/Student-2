@@ -14,6 +14,7 @@ class StoreItemController {
         components2.queryItems = query.map {
             URLQueryItem(name: $0.key, value: $0.value) }
         
+        
         let task = URLSession.shared.dataTask(with: components2.url!) { (data, response, error) in
             
             if let error = error {
