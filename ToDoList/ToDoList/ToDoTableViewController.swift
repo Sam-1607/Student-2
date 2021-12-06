@@ -7,7 +7,17 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
+class ToDoTableViewController: UITableViewController, ToCellDelegate {
+    func checkMarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var todo = todos[indexPath.row]
+            todo.isComplete.toggle()
+            todos[indexPath.row] = todo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveTodos(todos)
+        }
+    }
+    
     var todos = [ToDo]()
     
     
@@ -15,13 +25,31 @@ class ToDoTableViewController: UITableViewController {
     // MARK: - IBActions and Outlets
     
     
-    
-    
-    
-    @IBAction func unwindToToDoLists(segue: UIStoryboardSegue) {
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind" else {return}
+        let sourceViewController = segue.source as! ToDoDetailTableViewController
+        
+        if let todo = sourceViewController.todo {
+            if let indexOfExistingTodo = todos.firstIndex(of: todo) {
+                todos[indexOfExistingTodo] = todo
+                tableView.reloadRows(at: [IndexPath(row: indexOfExistingTodo, section: 0)], with: .automatic)
+            } else {
+                let newIndexPath = IndexPath(row: todos.count, section: 0)
+                todos.append(todo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+        ToDo.saveTodos(todos)
     }
     
     
+    @IBSegueAction func editToDo(_ coder: NSCoder) -> ToDoDetailTableViewController? {
+        guard let cell = send as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {return nil}
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailController = ToDoDetailTableViewController(coder: coder)
+        detailController?.todo = todos[indexPath.row]
+        return detailController
+    }
     
     
     override func viewDidLoad() {
@@ -32,6 +60,8 @@ class ToDoTableViewController: UITableViewController {
             todos = ToDo.loadSampleToDocs()
         }
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,9 +79,10 @@ class ToDoTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as! ToDoCell
         let todo = todos[indexPath.row]
-        cell.textLabel?.text = todo.title
+        cell.titleLabel?.text = todo.title
+        cell.delegate = self
         return cell
     }
     
@@ -69,9 +100,10 @@ class ToDoTableViewController: UITableViewController {
         if editingStyle == .delete {
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            ToDo.saveTodos(todos)
 //        } else if editingStyle == .insert {
 //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }    
+//        }
     }
 
 
@@ -100,4 +132,5 @@ class ToDoTableViewController: UITableViewController {
     }
     */
 
+}
 }

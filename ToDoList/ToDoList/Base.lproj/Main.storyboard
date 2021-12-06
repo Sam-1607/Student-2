@@ -11,40 +11,51 @@
         <scene sceneID="c7t-6V-Hvs">
             <objects>
                 <tableViewController id="Nyt-kJ-QHZ" customClass="ToDoTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="oDt-7s-RYe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="oDt-7s-RYe">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="wOQ-Kk-ixs">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="E7c-pe-EPc">
-                                        <rect key="frame" x="0.0" y="18" width="428" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E7c-pe-EPc" id="Boz-WT-glS">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="VgU-LI-IQM">
-                                        <rect key="frame" x="0.0" y="61.666667938232422" width="428" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VgU-LI-IQM" id="HdQ-FP-IOS">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="z6w-hl-UU7">
-                                        <rect key="frame" x="0.0" y="105.33333587646484" width="428" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6w-hl-UU7" id="OjV-Mo-KyL">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="E7c-pe-EPc" customClass="ToDoCell" customModule="ToDoList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="31.666666030883789" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E7c-pe-EPc" id="Boz-WT-glS">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuW-OP-dxJ">
+                                            <rect key="frame" x="8" y="0.66666666666666785" width="59" height="42.666666666666657"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="E7c-pe-EPc" eventType="touchUpInside" id="04z-4x-Kae"/>
+                                                <action selector="isCompleteButtonTapped:" destination="cA5-Ta-5n8" eventType="touchUpInside" id="bxq-aK-HL9"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0Z-39-aOF">
+                                            <rect key="frame" x="97" y="11.333333333333336" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="X0Z-39-aOF" firstAttribute="centerY" secondItem="Boz-WT-glS" secondAttribute="centerY" id="9nG-cl-83r"/>
+                                        <constraint firstItem="X0Z-39-aOF" firstAttribute="leading" secondItem="LuW-OP-dxJ" secondAttribute="trailing" constant="30" id="MDG-LB-lC3"/>
+                                        <constraint firstItem="LuW-OP-dxJ" firstAttribute="leading" secondItem="Boz-WT-glS" secondAttribute="leading" constant="8" id="MzG-kX-YNX"/>
+                                        <constraint firstItem="LuW-OP-dxJ" firstAttribute="centerY" secondItem="Boz-WT-glS" secondAttribute="centerY" id="VPs-tZ-bWa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="isCompleteButton" destination="LuW-OP-dxJ" id="8pb-Q7-HQ9"/>
+                                    <outlet property="titleLabel" destination="X0Z-39-aOF" id="nkx-Wi-uAp"/>
+                                    <segue destination="99q-rg-TMc" kind="presentation" id="HY9-hd-Q3Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Nyt-kJ-QHZ" id="psf-gX-2u2"/>
                             <outlet property="delegate" destination="Nyt-kJ-QHZ" id="te9-lj-pd9"/>
@@ -86,6 +97,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="returnPressed:" destination="cA5-Ta-5n8" eventType="editingDidEnd" id="GGV-rF-ru7"/>
                                                         <action selector="textEditingChanged:" destination="cA5-Ta-5n8" eventType="editingDidEnd" id="YMI-MH-ja9"/>
                                                     </connections>
                                                 </textField>
@@ -96,6 +108,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="cA5-Ta-5n8" eventType="touchUpInside" id="3U1-jN-4gE"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -137,6 +152,9 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-hq-l3m">
                                                     <rect key="frame" x="0.0" y="0.0" width="428" height="216"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="cA5-Ta-5n8" eventType="valueChanged" id="DHF-7A-tZu"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -186,12 +204,12 @@
                     <navigationItem key="navigationItem" title="New Todo" largeTitleDisplayMode="never" id="hzX-r3-1Ta">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XsL-M8-Wz5">
                             <connections>
-                                <segue destination="9z2-xO-5ge" kind="unwind" unwindAction="unwindToToDoListsWithSegue:" id="PIv-fd-gCA"/>
+                                <segue destination="9z2-xO-5ge" kind="unwind" unwindAction="unwindToToDoListWithSegue:" id="O7e-Pg-PUd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="f5W-gf-yzm">
                             <connections>
-                                <segue destination="9z2-xO-5ge" kind="unwind" identifier="saveUnwind" unwindAction="unwindToToDoListsWithSegue:" id="LMS-X5-gMf"/>
+                                <segue destination="9z2-xO-5ge" kind="unwind" identifier="saveUnwind" unwindAction="unwindToToDoListWithSegue:" id="mvX-gW-1CA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cA5-Ta-5n8" kind="relationship" relationship="rootViewController" id="WWv-yf-TYh"/>
+                        <segue destination="cA5-Ta-5n8" kind="relationship" relationship="rootViewController" destinationCreationSelector="editToDo:" id="WWv-yf-TYh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IV-WY-6T6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -242,6 +260,9 @@
             <point key="canvasLocation" x="-833" y="123"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HY9-hd-Q3Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
